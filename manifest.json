@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Song Ngữ Anh-Việt",
+  "version": "1.0.0",
+  "description": "Hiển thị phụ đề tiếng Anh kèm bản dịch tiếng Việt cùng lúc trên YouTube.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://translate.googleapis.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Phụ đề song ngữ",
+    "default_popup": "popup.html"
+  }
+}

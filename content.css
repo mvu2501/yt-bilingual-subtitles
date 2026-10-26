@@ -1,0 +1,46 @@
+/* Ẩn phụ đề gốc của YouTube (vẫn còn trong DOM để extension đọc) */
+html.ytbi-on .ytp-caption-window-container {
+  opacity: 0 !important;
+}
+
+#ytbi-overlay {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  max-width: 80%;
+  text-align: center;
+  z-index: 60;
+  pointer-events: none;
+  font-family: "YouTube Noto", Roboto, Arial, sans-serif;
+  line-height: 1.35;
+}
+
+#ytbi-overlay .ytbi-en,
+#ytbi-overlay .ytbi-vi {
+  display: block;
+  width: fit-content;
+  margin: 2px auto 0;
+  padding: 2px 8px;
+  background: rgba(8, 8, 8, 0.75);
+  border-radius: 3px;
+  font-size: 22px;
+}
+
+#ytbi-overlay .ytbi-en {
+  color: #ffffff;
+}
+
+#ytbi-overlay .ytbi-vi {
+  color: #ffe066;
+}
+
+#ytbi-overlay .ytbi-vi:empty {
+  display: none;
+}
+
+/* Chế độ toàn màn hình: chữ to hơn */
+.html5-video-player.ytp-fullscreen #ytbi-overlay .ytbi-en,
+.html5-video-player.ytp-fullscreen #ytbi-overlay .ytbi-vi {
+  font-size: 32px;
+}
